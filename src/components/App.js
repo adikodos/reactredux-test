@@ -8,18 +8,10 @@ import Home from '../components/Home';
 class App extends React.Component {
 
   render() {
-    if (this.props.appLoaded) {
-      return (
-        <div>
-          <Header />
-          <Route exact path="/" component={Home} />
-          <Footer />
-        </div>
-      );
-    }
     return (
       <div>
         <Header />
+        <Route exact path="/" component={Home} />
         <Footer />
       </div>
     );

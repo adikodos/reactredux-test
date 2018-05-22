@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { TYPE_BLOG, TYPE_EVENTS, TYPE_NEW } from '../constants/actionTypes';
 
 const EventTab = props => {
   const clickHandler = ev => {
@@ -51,6 +53,19 @@ const BlogTab = props => {
   );
 };
 
+const mapStateToProps = state => ({
+  ...state.home
+});
+
+const mapDispatchToProps = dispatch => ({
+  onTabEvents: (type) => 
+  dispatch({ type: TYPE_EVENTS, itemsType: type }),
+  onTabNew: (type) => 
+  dispatch({ type: TYPE_NEW, itemsType: type }),
+  onTabBlog: (type) => 
+  dispatch({ type: TYPE_BLOG, itemsType: type })
+});
+
 class Header extends React.Component {
   render() {
     return (
@@ -67,4 +82,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

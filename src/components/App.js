@@ -11,9 +11,7 @@ class App extends React.Component {
     if (this.props.appLoaded) {
       return (
         <div>
-          <Header
-            appName={this.props.appName}
-            currentUser={this.props.currentUser} />
+          <Header />
           <Route exact path="/" component={Home} />
           <Footer />
         </div>
@@ -21,9 +19,7 @@ class App extends React.Component {
     }
     return (
       <div>
-        <Header
-          appName={this.props.appName}
-          currentUser={this.props.currentUser} />
+        <Header />
         <Footer />
       </div>
     );
